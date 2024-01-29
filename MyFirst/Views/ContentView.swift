@@ -48,8 +48,8 @@ struct ContentView: View {
   
   func changeColor() {
     self.shapeColor = Color(red: redSliderValue/colorMaxConstant,
-                       green: greenSliderValue/colorMaxConstant,
-                       blue: blueSliderValue/colorMaxConstant)
+                            green: greenSliderValue/colorMaxConstant,
+                            blue: blueSliderValue/colorMaxConstant)
   }
   
   func getColorInInt(colorInDouble: Double) -> Int {
