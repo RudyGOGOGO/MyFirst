@@ -23,7 +23,6 @@ struct ColorSelectionView: View {
   }
   func changeColor() {
     self.displayColor = Color(red: redSliderValue/Constants.ColorValue.colorMax, green: greenSliderValue/Constants.ColorValue.colorMax, blue: blueSliderValue/Constants.ColorValue.colorMax)
-    print(Color(red: redSliderValue/Constants.ColorValue.colorMax, green: greenSliderValue/Constants.ColorValue.colorMax, blue: blueSliderValue/Constants.ColorValue.colorMax))
   }
 }
 
