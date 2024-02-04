@@ -17,14 +17,15 @@ struct ContentView: View {
     if isPortrait() {
       VStack {
         BigTitle(text: "Color Picker")
-        DisplayView(displayColor: $shapeColor).padding(Constants.PaddingValue.displayPadding)
+        //Learning Note:padding([.leading, .trailing], 10) only add padding to the left and right
+        DisplayView(displayColor: $shapeColor).padding([.leading, .trailing], Constants.PaddingValue.displayPadding)
         ColorSelectionView(redSliderValue: $redSliderValue, greenSliderValue: $greenSliderValue, blueSliderValue: $blueSliderValue, displayColor: $shapeColor)
       }
     } else {
       HStack {
         VStack{
           BigTitle(text: "Color Picker")
-          DisplayView(displayColor: $shapeColor).padding(Constants.PaddingValue.displayPadding)
+          DisplayView(displayColor: $shapeColor).padding([.leading, .trailing], Constants.PaddingValue.displayPadding)
         }
         ColorSelectionView(redSliderValue: $redSliderValue, greenSliderValue: $greenSliderValue, blueSliderValue: $blueSliderValue, displayColor: $shapeColor)
       }
