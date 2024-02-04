@@ -1,10 +1,3 @@
-//
-//  MyFirstApp.swift
-//  MyFirst
-//
-//  Created by Wei Zhang on 1/24/24.
-//
-
 import SwiftUI
 
 @main
