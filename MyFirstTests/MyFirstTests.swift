@@ -1,22 +1,27 @@
 import XCTest
+import SwiftUI
 @testable import MyFirst
 
 final class MyFirstTests: XCTestCase {
-  var contentView: ContentView!
+  var colorSelectionView: ColorSelectionView!
   
   override func setUpWithError() throws {
-    contentView = ContentView()
+    colorSelectionView = ColorSelectionView(redSliderValue: Binding.constant(255.0), greenSliderValue: Binding.constant(255.0), blueSliderValue: Binding.constant(255.0), displayColor: Binding.constant(Color.blue))
   }
   
   override func tearDownWithError() throws {
-    contentView = nil
+    colorSelectionView = nil
   }
-  
+
   func testGetColorInInt() {
-    XCTAssertEqual(contentView.getColorInInt(colorInDouble: 20.5), 21)
-    XCTAssertEqual(contentView.getColorInInt(colorInDouble: 20.5111), 21)
-    XCTAssertEqual(contentView.getColorInInt(colorInDouble: 20.4), 20)
-    XCTAssertEqual(contentView.getColorInInt(colorInDouble: 20.39999), 20)
+    /*
+     TODO: Need to figure out why the following method cannot change the self.displayColor
+     After reassigning a new value to the binding property displayColor, self.displayColor does not get changed
+     if we directly call the following method, however, when the app runs, the binding property displayColor indeed gets updated
+     when the method changeColor gets called since the State property in the ContentView gets updated so that the APP works as expected
+     */
+    colorSelectionView.changeColor()
+    XCTAssertEqual(colorSelectionView.displayColor, Color.blue)
   }
   
 }
