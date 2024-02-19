@@ -2,7 +2,12 @@ import Cocoa
 
 //:a) Create an array of Int called nums with values 0 through 20. Iterate over the Array and print the even numbers.
 let nums: [Int] = Array(0...20)
+//approach 1
 for number in nums where number % 2 == 0 {
+  print(number)
+}
+//approach 2
+for number in nums where number.isMultiple(of: 2) {
   print(number)
 }
 
@@ -26,12 +31,11 @@ for item1 in array1 {
 
 //:d) Write a function called average that takes an optional array of Int. If the array is not nil, calculate the average of the array's values and print:“The average of the values in the array is <average>.”Where <average> is the calculated average. If the array is nil, print:“The array is nil. Calculating the average is impossible.” Note: the average is calculated by summing the values in the array and dividing by the number of elements. Call this function two times. First, pass in the nums array from part A and second by passing an optional array of Int.
 func average(inputArray: [Int]?) {
-  if inputArray == nil {
-    print("The array is nil. Calculating the average is impossible.")
+  if let inputArray = inputArray {
+    let sum: Int = inputArray.reduce(0, +)
+    print("The average of the values in the array is \(inputArray.reduce(0, +)/inputArray.count).")
   } else {
-    let arr = inputArray!
-    let sum: Int = inputArray!.reduce(0, +)
-    print("The average of the values in the array is \(arr.reduce(0, +)/arr.count).")
+    print("The array is nil. Calculating the average is impossible.")
   }
 }
 
@@ -44,6 +48,7 @@ struct Person {
   let firstName: String
   let lastName: String
   var age: Int
+  
   func details() {
     print("Name: \(firstName) \(lastName), Age: \(age)")
   }
@@ -57,8 +62,9 @@ person.details()
 class Student {
   let person: Person
   var grades: [Int]
-  init(firstName: String, lastName: String, age: Int, grades: [Int]) {
-    self.person = Person(firstName: firstName, lastName: lastName, age: age)
+  
+  init(person: Person, grades: [Int]) {
+    self.person = person
     self.grades = grades
   }
   func calculateAverageGrade() -> Double{
@@ -69,13 +75,14 @@ class Student {
   }
 }
 
-let student = Student(firstName: "Rudy", lastName: "Zhang", age: 10, grades: [94, 99, 81, 100, 79])
+let student = Student(person:Person(firstName: "Rudy", lastName: "Zhang", age: 10), grades: [94, 99, 81, 100, 79])
 student.details()
 
 
 //:Part 3 - Above and Beyond.
 struct Square {
   var side: Int
+  
   func area() -> Int {
     return side * side
   }
@@ -84,6 +91,7 @@ struct Square {
 class Rectangle {
   var length: Int
   var width: Int
+  
   init(length: Int, width: Int) {
     self.length = length
     self.width = width
