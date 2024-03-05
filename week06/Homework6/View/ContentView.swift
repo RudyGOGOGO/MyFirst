@@ -1,22 +1,20 @@
-//
-//  ContentView.swift
-//
-
 import SwiftUI
 
 struct ContentView: View {
   @StateObject var taskStore = TaskStore()
-  
   var body: some View {
     NavigationStack {
-      VStack {
-        if taskStore.tasks.isEmpty {
-          Text("No tasks found")
-        } else {
-          TaskListView(taskStore: taskStore)
-        }
-        Spacer()
-        //NewTaskButton(addingTask: $addingTask)
+      TabView(){
+        TaskListView(taskStore: taskStore, operation: Constants.Operation.showUncompleted)
+          .tabItem {
+            Image(systemName: "list.bullet.circle")
+            Text("Tasks")
+          }
+        TaskListView(taskStore: taskStore, operation: Constants.Operation.showCompleted)
+          .tabItem {
+            Image(systemName: "checkmark.circle")
+            Text("Completed")
+          }
       }
       .navigationTitle("My Tasks")
       .toolbar {
@@ -24,6 +22,8 @@ struct ContentView: View {
           NewTaskButtonView(taskStore: taskStore)
         }
       }
+      //when there is no task, display "No Task Found"
+      .overlay{if taskStore.tasks.isEmpty {Text("No Task Found")}}
     }
   }
   

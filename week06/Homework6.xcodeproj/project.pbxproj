@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39ACDE3A2B95AA3100018659 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ACDE392B95AA3100018659 /* Constants.swift */; };
 		BA1340E72A915A2A001A1F9F /* Homework5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1340E62A915A2A001A1F9F /* Homework5App.swift */; };
 		BA1340E92A915A2A001A1F9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1340E82A915A2A001A1F9F /* ContentView.swift */; };
 		BA1340EB2A915A2D001A1F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1340EA2A915A2D001A1F9F /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39ACDE392B95AA3100018659 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA1340E32A915A2A001A1F9F /* Homework6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1340E62A915A2A001A1F9F /* Homework5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework5App.swift; sourceTree = "<group>"; };
 		BA1340E82A915A2A001A1F9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39ACDE382B95AA1E00018659 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				39ACDE392B95AA3100018659 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		BA1340DA2A915A2A001A1F9F = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		BA1340E52A915A2A001A1F9F /* Homework6 */ = {
 			isa = PBXGroup;
 			children = (
+				39ACDE382B95AA1E00018659 /* Constants */,
 				BA1341032A9195DD001A1F9F /* View */,
 				BA1341022A9195D3001A1F9F /* Model */,
 				BA1340E62A915A2A001A1F9F /* Homework5App.swift */,
@@ -132,7 +143,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					BA1340E22A915A2A001A1F9F = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -179,6 +190,7 @@
 				BA1340F72A916399001A1F9F /* AddTaskView.swift in Sources */,
 				BA1340FF2A9193BB001A1F9F /* NewTaskButton.swift in Sources */,
 				BA1340E92A915A2A001A1F9F /* ContentView.swift in Sources */,
+				39ACDE3A2B95AA3100018659 /* Constants.swift in Sources */,
 				BA1340E72A915A2A001A1F9F /* Homework5App.swift in Sources */,
 				BA1340F52A9161C3001A1F9F /* TaskStore.swift in Sources */,
 				BA1341012A919522001A1F9F /* TaskListView.swift in Sources */,
@@ -225,6 +237,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -285,6 +298,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
