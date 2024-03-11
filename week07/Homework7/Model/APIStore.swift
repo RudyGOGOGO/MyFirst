@@ -1,4 +1,4 @@
-/// Copyright (c) 2023 Kodeco Inc.
+/// Copyright (c) 2024 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,13 +30,28 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-@main
-struct AppMain: App {
-  var body: some Scene {
-    WindowGroup {
-      ContentView(apiStore: APIStore())
+class APIStore: ObservableObject {
+  @Published var apiList: [API] = []
+  init() {
+    loadJSONAPIList()
+  }
+  private func loadJSONAPIList() {
+    guard let tasksJSONURL = Bundle.main.url(forResource: Constants.InputFileName.API_LIST, withExtension: "json") else {
+      decodeJSONInput(tasksJSONURL: URL(fileURLWithPath: Constants.InputFileName.API_LIST, relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json"))
+      return
+    }
+    decodeJSONInput(tasksJSONURL: tasksJSONURL)
+  }
+  private func decodeJSONInput(tasksJSONURL: URL) {
+    let decoder = JSONDecoder()
+    do {
+      let tasksData = try Data(contentsOf: tasksJSONURL)
+      let apiInput = try decoder.decode(APIInput.self, from: tasksData)
+      apiList = apiInput.entries
+    } catch let error {
+      print(error)
     }
   }
 }

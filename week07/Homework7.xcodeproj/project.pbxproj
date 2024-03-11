@@ -12,6 +12,12 @@
 		18D775C722AD944400AE281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C622AD944400AE281E /* Assets.xcassets */; };
 		18D775CA22AD944400AE281E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D775C922AD944400AE281E /* Preview Assets.xcassets */; };
 		18D775D822AD963800AE281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D775DA22AD963800AE281E /* LaunchScreen.storyboard */; };
+		3955D4532B9EA000009BD6E0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955D4522B9EA000009BD6E0 /* API.swift */; };
+		3955D4552B9EA13A009BD6E0 /* APIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955D4542B9EA13A009BD6E0 /* APIStore.swift */; };
+		3955D4592B9EA21E009BD6E0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955D4582B9EA21E009BD6E0 /* FileManager.swift */; };
+		3955D45E2B9EA5D3009BD6E0 /* APIDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955D45D2B9EA5D3009BD6E0 /* APIDetails.swift */; };
+		3955D4602B9EB5BA009BD6E0 /* APIInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3955D45F2B9EB5BA009BD6E0 /* APIInput.swift */; };
+		396730A92B9EBEAD00656C26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396730A82B9EBEAD00656C26 /* Constants.swift */; };
 		BAF39C2E2AB792B400B18802 /* apilist.json in Resources */ = {isa = PBXBuildFile; fileRef = BAF39C2D2AB792B400B18802 /* apilist.json */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +29,12 @@
 		18D775C922AD944400AE281E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18D775CE22AD944400AE281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D775DE22AD96B400AE281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3955D4522B9EA000009BD6E0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3955D4542B9EA13A009BD6E0 /* APIStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStore.swift; sourceTree = "<group>"; };
+		3955D4582B9EA21E009BD6E0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		3955D45D2B9EA5D3009BD6E0 /* APIDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDetails.swift; sourceTree = "<group>"; };
+		3955D45F2B9EB5BA009BD6E0 /* APIInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInput.swift; sourceTree = "<group>"; };
+		396730A82B9EBEAD00656C26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BAF39C2D2AB792B400B18802 /* apilist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apilist.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +70,11 @@
 		18D775BF22AD944300AE281E /* Homework7 */ = {
 			isa = PBXGroup;
 			children = (
+				396730A72B9EBE9500656C26 /* Constant */,
+				3955D45C2B9EA5B8009BD6E0 /* View */,
+				3955D4572B9EA207009BD6E0 /* Extensions */,
+				3955D4512B9E9FDB009BD6E0 /* Model */,
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
-				18D775C422AD944300AE281E /* ContentView.swift */,
 				18D775C622AD944400AE281E /* Assets.xcassets */,
 				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
 				18D775CE22AD944400AE281E /* Info.plist */,
@@ -75,6 +90,41 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3955D4512B9E9FDB009BD6E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3955D4522B9EA000009BD6E0 /* API.swift */,
+				3955D4542B9EA13A009BD6E0 /* APIStore.swift */,
+				3955D45F2B9EB5BA009BD6E0 /* APIInput.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3955D4572B9EA207009BD6E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3955D4582B9EA21E009BD6E0 /* FileManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3955D45C2B9EA5B8009BD6E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18D775C422AD944300AE281E /* ContentView.swift */,
+				3955D45D2B9EA5D3009BD6E0 /* APIDetails.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		396730A72B9EBE9500656C26 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				396730A82B9EBEAD00656C26 /* Constants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,8 +154,9 @@
 		18D775B522AD944300AE281E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = Kodeco;
 				TargetAttributes = {
 					18D775BC22AD944300AE281E = {
@@ -172,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3955D4592B9EA21E009BD6E0 /* FileManager.swift in Sources */,
+				3955D4552B9EA13A009BD6E0 /* APIStore.swift in Sources */,
+				3955D45E2B9EA5D3009BD6E0 /* APIDetails.swift in Sources */,
+				3955D4602B9EB5BA009BD6E0 /* APIInput.swift in Sources */,
 				18D775C522AD944300AE281E /* ContentView.swift in Sources */,
+				3955D4532B9EA000009BD6E0 /* API.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
+				396730A92B9EBEAD00656C26 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +285,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -289,6 +347,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
