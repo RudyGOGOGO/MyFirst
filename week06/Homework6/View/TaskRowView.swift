@@ -6,21 +6,21 @@ import SwiftUI
 
 struct TaskRowView: View {
   @Binding var task: Task
-  /*
-   adding this state to make the transition animation finish before actually changing the binding state, otherwise, the animation will not be visible
-   */
-  @State var isCompleted: Bool = false
+  @State var isCompleted: Bool
   var body: some View {
     HStack {
       Text(task.title)
       Spacer()
-      Image(systemName: isCompleted ? "checkmark.square" : "square")
-        .foregroundColor(isCompleted ? Color.green : Color.red)
+      Image(systemName: task.isCompleted ? "checkmark.square" : "square")
+        .foregroundColor(task.isCompleted ? Color.green : Color.red)
         //when the toggle happens, trigger the default transaction animation
         .onTapGesture {
-          withAnimation{
+          /*
+           An animation type with duration is included to give a known time to animation. Finally the deadline for the asyncAfter is .now() + 2 to ensure the animation gets a chance to complete for the view is redrawn. 
+           */
+          withAnimation(.easeInOut(duration: 2)){
             isCompleted.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
               task.isCompleted.toggle()
             }
           }
