@@ -26,6 +26,8 @@ struct ImageModel: Codable {
   var height: Int
   var url: String
   var src: Source
+  var alt: String
+  var photographer: String
 }
 
 struct Source: Codable {

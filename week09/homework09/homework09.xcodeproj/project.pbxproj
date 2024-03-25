@@ -15,7 +15,8 @@
 		3997CD0D2BB1A53400BB3055 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3997CD0C2BB1A53400BB3055 /* ImageModel.swift */; };
 		3997CD102BB1A57600BB3055 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3997CD0F2BB1A57600BB3055 /* SearchBar.swift */; };
 		3997CD122BB1A61100BB3055 /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3997CD112BB1A61100BB3055 /* ImageDetails.swift */; };
-		39E69D3E2BB1A94600472169 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E69D3D2BB1A94600472169 /* ImageDownloader.swift */; };
+		39E69D3E2BB1A94600472169 /* ImageSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E69D3D2BB1A94600472169 /* ImageSearch.swift */; };
+		39E69D402BB2288200472169 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E69D3F2BB2288200472169 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +29,8 @@
 		3997CD0C2BB1A53400BB3055 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		3997CD0F2BB1A57600BB3055 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		3997CD112BB1A61100BB3055 /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
-		39E69D3D2BB1A94600472169 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		39E69D3D2BB1A94600472169 /* ImageSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearch.swift; sourceTree = "<group>"; };
+		39E69D3F2BB2288200472169 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				3997CD0C2BB1A53400BB3055 /* ImageModel.swift */,
-				39E69D3D2BB1A94600472169 /* ImageDownloader.swift */,
+				39E69D3D2BB1A94600472169 /* ImageSearch.swift */,
+				39E69D3F2BB2288200472169 /* ImageDownloader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,8 +175,9 @@
 				3997CCFE2BB1A26D00BB3055 /* ContentView.swift in Sources */,
 				3997CD102BB1A57600BB3055 /* SearchBar.swift in Sources */,
 				3997CD122BB1A61100BB3055 /* ImageDetails.swift in Sources */,
+				39E69D402BB2288200472169 /* ImageDownloader.swift in Sources */,
 				3997CD0D2BB1A53400BB3055 /* ImageModel.swift in Sources */,
-				39E69D3E2BB1A94600472169 /* ImageDownloader.swift in Sources */,
+				39E69D3E2BB1A94600472169 /* ImageSearch.swift in Sources */,
 				3997CCFC2BB1A26D00BB3055 /* homework09App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

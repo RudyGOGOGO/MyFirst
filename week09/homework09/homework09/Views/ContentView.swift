@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var searchQuery = ""
-  @State private var searchResults: [String] = []
-  @ObservedObject private var imageDownloader: ImageDownloader = ImageDownloader()
+  @MainActor @State private var searchQuery = ""
+  @MainActor @State private var searchResults: [ImageModel] = []
+  @ObservedObject private var imageDownloader: ImageSearch = ImageSearch()
   
   var body: some View {
-      NavigationView {
-          VStack {
-              SearchBar(query: $searchQuery, onSearch: searchPhotos)
-            List(searchResults, id: \.self) { photo in
-                  NavigationLink(destination: ImageDetails(photo: photo)) {
-                      Text(photo)
-                  }
+    NavigationView {
+      VStack {
+        SearchBar(query: $searchQuery, onSearch: searchImages)
+        List(searchResults, id: \.id) { image in
+          VStack{
+            NavigationLink(destination: ImageDetails(imageModel: image)) {
+              VStack(alignment:.leading){
+                Text("Photographer:" + image.photographer)
+                Spacer()
+                Text("Intro: " + image.alt)
               }
+            }
           }
-          .navigationTitle("Image Library")
+        }
       }
+      .navigationTitle("Image Library")
+    }
   }
   
-  private func searchPhotos() {
+  private func searchImages() {
     Task{
       @MainActor in
       self.searchResults = try await imageDownloader.downloadImage(keyword: searchQuery)
@@ -35,5 +41,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
